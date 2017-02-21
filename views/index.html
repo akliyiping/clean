@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Cleen</title>
+    <script src="bin/bundle.js"></script>
+</head>
+<body>
+
+<div id="main">
+    <div class="content" v-cloak :style="{
+             width:resData.page.width,
+             height:resData.page.height
+         }">
+        <div class="slots" v-cloak
+             :class="{
+                     'add-layout':isFirstAdd,
+                     'image-layout':!isFirstAdd
+                 }"
+             :style="{
+                     'margin-top':resData.page.slots[0].content_offset_y,
+                     width:resData.page.slots[0].width,
+                     height:resData.page.slots[0].height
+                 }">
+            <div class="image"
+                 v-cloak
+                 :style="imageStyle"
+            ></div>
+            <form role="form" v-cloak
+                  class="input-form"
+                  onsubmit="return false;
+                ">
+                <input type="file" class="input-file"  @change="addImage" >
+            </form>
+            <div class="addBtn">+</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
