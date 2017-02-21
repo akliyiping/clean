@@ -12,8 +12,8 @@ router.get('/layouts', function (req, res, next) {
         res.on('end', () => {
             try {
                 let rawDataObj = JSON.parse(rawData);
-                var pageScale = 90;
-                var pageBase = rawDataObj.page.width;
+                let pageScale = 90;
+                let pageBase = rawDataObj.page.width;
                 let slotWidth = rawDataObj.page.slots[0].width;
                 let slotHeight = rawDataObj.page.slots[0].height;
                 rawDataObj.page.width = pageScale+'%';
